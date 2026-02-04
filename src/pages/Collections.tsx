@@ -8,40 +8,46 @@ import sofasImg from "@/assets/collection-sofas.jpg";
 import chairsImg from "@/assets/collection-chairs.jpg";
 import lightingImg from "@/assets/collection-lighting.jpg";
 import accessoriesImg from "@/assets/collection-accessories.jpg";
-import { AnimatedText } from "@/components/AnimatedSection";
 
 // Sample products - these would be replaced with actual product data
 const galleryProducts = [
-  { id: 1, name: "Baroque Console Table", price: "$4,800", image: consolesImg, category: "consoles" },
-  { id: 2, name: "Gilded Rococo Mirror", price: "$2,400", image: mirrorsImg, category: "mirrors" },
-  { id: 3, name: "Ornate Mantel Clock", price: "$1,850", image: artImg, category: "art" },
-  { id: 4, name: "Louis XV Sideboard", price: "$6,200", image: consolesImg, category: "consoles" },
-  { id: 5, name: "Venetian Wall Mirror", price: "$3,100", image: mirrorsImg, category: "mirrors" },
-  { id: 6, name: "Bronze Sculpture Vase", price: "$1,200", image: artImg, category: "art" },
+  { id: 1, name: "Classical Bronze Sculpture", price: "$4,800", image: artImg, category: "sculptures" },
+  { id: 2, name: "Baroque Console Table", price: "$6,200", image: consolesImg, category: "furniture" },
+  { id: 3, name: "Ornate Mantel Clock", price: "$1,850", image: accessoriesImg, category: "clocks" },
+  { id: 4, name: "Crystal Chandelier", price: "$5,400", image: lightingImg, category: "lighting" },
+  { id: 5, name: "Venetian Glass Vase", price: "$1,200", image: artImg, category: "vases" },
+  { id: 6, name: "Gilded Rococo Mirror", price: "$2,400", image: mirrorsImg, category: "collectables" },
+  { id: 7, name: "Renaissance Oil Painting", price: "$8,500", image: artImg, category: "art" },
+  { id: 8, name: "Fine Porcelain Set", price: "$3,100", image: accessoriesImg, category: "tableware" },
 ];
 
 const maisonProducts = [
-  { id: 7, name: "Velvet Curve Sofa", price: "$8,500", image: sofasImg, category: "sofas" },
-  { id: 8, name: "Sculptural Accent Chair", price: "$2,200", image: chairsImg, category: "chairs" },
-  { id: 9, name: "Crystal Chandelier", price: "$5,400", image: lightingImg, category: "lighting" },
-  { id: 10, name: "Brass Table Lamp", price: "$890", image: lightingImg, category: "lighting" },
-  { id: 11, name: "Decorative Vases Set", price: "$1,100", image: accessoriesImg, category: "accessories" },
-  { id: 12, name: "Boucle Lounge Chair", price: "$3,400", image: chairsImg, category: "chairs" },
+  { id: 9, name: "Velvet Curve Sofa", price: "$8,500", image: sofasImg, category: "furniture" },
+  { id: 10, name: "Crystal Chandelier", price: "$5,400", image: lightingImg, category: "lighting" },
+  { id: 11, name: "Decorative Vases Set", price: "$1,100", image: accessoriesImg, category: "vases" },
+  { id: 12, name: "Contemporary Art Piece", price: "$3,400", image: artImg, category: "art" },
+  { id: 13, name: "Luxury Dining Set", price: "$4,200", image: sofasImg, category: "tableware" },
 ];
 
 const galleryCategories = [
-  { id: "all", label: "All" },
-  { id: "consoles", label: "Consoles" },
-  { id: "mirrors", label: "Mirrors" },
+ 
+  { id: "sculptures", label: "Sculptures" },
+  { id: "furniture", label: "Furniture" },
+  { id: "clocks", label: "Clocks" },
+  { id: "lighting", label: "Lighting" },
+  { id: "vases", label: "Vases" },
+  { id: "collectables", label: "Collectables" },
   { id: "art", label: "Art" },
+  { id: "tableware", label: "Tableware" },
 ];
 
 const maisonCategories = [
-  { id: "all", label: "All" },
-  { id: "sofas", label: "Sofas" },
-  { id: "chairs", label: "Chairs" },
+ 
+  { id: "furniture", label: "Furniture" },
   { id: "lighting", label: "Lighting" },
-  { id: "accessories", label: "Accessories" },
+  { id: "vases", label: "Vases" },
+  { id: "art", label: "Art" },
+  { id: "tableware", label: "Tableware" },
 ];
 
 const Collections = () => {
@@ -73,24 +79,18 @@ const Collections = () => {
   return (
     <Layout>
       {/* Hero Section */}
-       <section className="py-16 lg:py-24 bg-burgundy">
+      <section className="py-16 lg:py-24 bg-burgundy">
         <div className="container mx-auto px-4 lg:px-8 text-center">
-          <AnimatedText>
-            <p className="text-gold text-sm tracking-luxury uppercase mb-4 font-sans">
-              Discover Our World
-            </p>
-          </AnimatedText>
-          <AnimatedText delay={0.1}>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-ivory mb-6">
-              Our Collections
-            </h1>
-          </AnimatedText>
-          <AnimatedText delay={0.2}>
-            <p className="text-champagne/90 text-lg max-w-2xl mx-auto font-sans leading-relaxed">
-              A tribute to classical European artistry. Each piece represents the
-              pinnacle of craftsmanship and timeless design.
-            </p>
-          </AnimatedText>
+          <p className="text-gold text-sm tracking-luxury uppercase mb-4 font-sans">
+            Discover Our World
+          </p>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-ivory mb-6">
+            Our Collections
+          </h1>
+          <p className="text-champagne/90 text-lg max-w-2xl mx-auto font-sans leading-relaxed">
+            A tribute to classical European artistry. Each piece represents the
+            pinnacle of craftsmanship and timeless design.
+          </p>
         </div>
       </section>
 

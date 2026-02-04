@@ -3,50 +3,27 @@ import { Link } from "react-router-dom";
 import consolesImg from "@/assets/collection-consoles.jpg";
 import mirrorsImg from "@/assets/collection-mirrors.jpg";
 import artImg from "@/assets/collection-art.jpg";
-import sofasImg from "@/assets/collection-sofas.jpg";
-import chairsImg from "@/assets/collection-chairs.jpg";
 import lightingImg from "@/assets/collection-lighting.jpg";
 import accessoriesImg from "@/assets/collection-accessories.jpg";
+import sofasImg from "@/assets/collection-sofas.jpg";
 
 const galleryCategories = [
-  {
-    id: "consoles",
-    title: "Classic Consoles & Sideboards",
-    image: consolesImg,
-  },
-  {
-    id: "mirrors",
-    title: "Antique Mirrors & Frames",
-    image: mirrorsImg,
-  },
-  {
-    id: "art",
-    title: "Decorative Art Pieces",
-    image: artImg,
-  },
+  { id: "sculptures", title: "Sculptures", image: artImg },
+  { id: "furniture", title: "Furniture", image: consolesImg },
+  { id: "clocks", title: "Clocks", image: accessoriesImg },
+  { id: "lighting", title: "Lighting", image: lightingImg },
+  { id: "vases", title: "Vases", image: artImg },
+  { id: "collectables", title: "Collectables", image: mirrorsImg },
+  { id: "art", title: "Art", image: artImg },
+  { id: "tableware", title: "Tableware", image: accessoriesImg },
 ];
 
 const maisonCategories = [
-  {
-    id: "sofas",
-    title: "Sofas & Statement Seating",
-    image: sofasImg,
-  },
-  {
-    id: "chairs",
-    title: "Chairs & Accent Furniture",
-    image: chairsImg,
-  },
-  {
-    id: "lighting",
-    title: "Lighting Maison",
-    image: lightingImg,
-  },
-  {
-    id: "accessories",
-    title: "Accessories & Decorative Art",
-    image: accessoriesImg,
-  },
+  { id: "furniture", title: "Furniture", image: consolesImg },
+  { id: "lighting", title: "Lighting", image: lightingImg },
+  { id: "vases", title: "Vases", image: accessoriesImg },
+  { id: "art", title: "Art", image: artImg },
+  { id: "tableware", title: "Tableware", image: sofasImg },
 ];
 
 export const CollectionToggle = () => {
@@ -93,18 +70,18 @@ export const CollectionToggle = () => {
 
         {/* Category Grid */}
         <div
-          className={`grid gap-6 ${
+          className={`grid gap-4 ${
             activeTab === "gallery"
-              ? "md:grid-cols-3"
-              : "md:grid-cols-2 lg:grid-cols-4"
+              ? "grid-cols-2 md:grid-cols-4"
+              : "grid-cols-2 md:grid-cols-3 lg:grid-cols-5"
           }`}
         >
           {categories.map((category, index) => (
             <Link
               key={category.id}
               to={`/collections?tab=${activeTab}&category=${category.id}`}
-              className="group relative aspect-[3/4] rounded-lg overflow-hidden animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group relative aspect-square rounded-lg overflow-hidden animate-scale-in"
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
               {/* Image */}
               <img
@@ -117,8 +94,8 @@ export const CollectionToggle = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-burgundy/90 via-burgundy/30 to-transparent" />
 
               {/* Title */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="text-ivory font-serif text-lg lg:text-xl group-hover:text-gold transition-colors duration-300">
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <h3 className="text-ivory font-serif text-sm lg:text-base group-hover:text-gold transition-colors duration-300">
                   {category.title}
                 </h3>
               </div>

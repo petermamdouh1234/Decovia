@@ -1,33 +1,40 @@
 import { Link } from "react-router-dom";
 import sofasImg from "@/assets/collection-sofas.jpg";
-import chairsImg from "@/assets/collection-chairs.jpg";
 import lightingImg from "@/assets/collection-lighting.jpg";
 import accessoriesImg from "@/assets/collection-accessories.jpg";
+import artImg from "@/assets/collection-art.jpg";
+import consolesImg from "@/assets/collection-consoles.jpg";
 
 const collections = [
   {
-    title: "Sofas & Statement Seating",
-    description: "Tailored like couture pieces for the most refined interiors.",
-    image: sofasImg,
-    category: "sofas",
+    title: "Furniture",
+    description: "Couture-inspired furniture tailored for refined interiors.",
+    image: consolesImg,
+    category: "furniture",
   },
   {
-    title: "Chairs & Accent Furniture",
-    description: "Sculptural accents and seating that define spaces.",
-    image: chairsImg,
-    category: "chairs",
-  },
-  {
-    title: "Lighting Maison",
-    description: "Chandeliers & table lamps that illuminate with elegance.",
+    title: "Lighting",
+    description: "Chandeliers & lamps that illuminate with elegance.",
     image: lightingImg,
     category: "lighting",
   },
   {
-    title: "Accessories & Decorative Art",
-    description: "Curated finishing touches for the discerning collector.",
+    title: "Vases",
+    description: "Sculptural vessels as decorative statements.",
     image: accessoriesImg,
-    category: "accessories",
+    category: "vases",
+  },
+  {
+    title: "Art",
+    description: "Curated art pieces for the discerning collector.",
+    image: artImg,
+    category: "art",
+  },
+  {
+    title: "Tableware",
+    description: "Luxury dining pieces for elegant entertaining.",
+    image: sofasImg,
+    category: "tableware",
   },
 ];
 
@@ -49,8 +56,8 @@ export const MaisonCollections = () => {
           </p>
         </div>
 
-        {/* Collection Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Collection Cards - 5 columns for 5 items */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
           {collections.map((collection, index) => (
             <Link
               key={collection.title}
@@ -59,7 +66,7 @@ export const MaisonCollections = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image */}
-              <div className="aspect-[4/5] overflow-hidden">
+              <div className="aspect-square overflow-hidden">
                 <img
                   src={collection.image}
                   alt={collection.title}
@@ -68,11 +75,11 @@ export const MaisonCollections = () => {
               </div>
 
               {/* Content */}
-              <div className="p-5">
-                <h3 className="text-lg font-serif text-foreground mb-2 group-hover:text-gold transition-colors duration-300">
+              <div className="p-4">
+                <h3 className="text-base font-serif text-foreground mb-2 group-hover:text-gold transition-colors duration-300">
                   {collection.title}
                 </h3>
-                <p className="text-muted-foreground text-sm font-sans leading-relaxed">
+                <p className="text-muted-foreground text-xs font-sans leading-relaxed line-clamp-2">
                   {collection.description}
                 </p>
               </div>
